@@ -1,0 +1,12 @@
+{
+  "name": "VoiceNative",
+  "displayName": "VoiceNative",
+  "expo": {
+    "name": "VoiceNative",
+    "slug": "VoiceNative",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
