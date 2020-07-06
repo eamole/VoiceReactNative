@@ -1,5 +1,4 @@
-platform :ios, '10.0'
-require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 def add_flipper_pods!(versions = {})
@@ -78,7 +77,13 @@ target 'VoiceNative' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  use_unimodules!
+  pod 'react-native-voice', :path => '../node_modules/react-native-voice'
+
+  target 'VoiceNativeTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
   use_native_modules!
 
   # Enables Flipper.
@@ -88,5 +93,14 @@ target 'VoiceNative' do
   add_flipper_pods!
   post_install do |installer|
     flipper_post_install(installer)
+  end
+end
+
+target 'VoiceNative-tvOS' do
+  # Pods for VoiceNative-tvOS
+
+  target 'VoiceNative-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
   end
 end
