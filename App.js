@@ -79,8 +79,9 @@ export default class VoiceNative extends React.Component {
         <Text style={styles.transcript}>
             Results
         </Text>
-        {this.state.results.map((result, index) => {
-          return <Text key={index} style={styles.transcript}> {result} </Text>
+        {
+          this.state.results.map((result, index) => {
+            return <Text key={index} style={styles.transcript}> {result} </Text>
           })
         }
         
